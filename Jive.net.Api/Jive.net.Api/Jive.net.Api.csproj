@@ -48,6 +48,7 @@
     <Compile Include="DAL\IHttpRequester.cs" />
     <Compile Include="DAL\IRepository.cs" />
     <Compile Include="DAL\RestRepo.cs" />
+    <Compile Include="Serialization\IEntityMemberProvider.cs" />
     <Compile Include="Serialization\EntityPropertyMap.cs" />
     <Compile Include="Serialization\IPropertyAnalyzer.cs" />
     <Compile Include="Serialization\ISerialize.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="Serialization\JiveAnnotationAnalyzer.cs" />
     <Compile Include="Serialization\JiveApiAttributes.cs" />
     <Compile Include="Serialization\JsonSerializer.cs" />
+    <Compile Include="Serialization\NaiveMemberProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

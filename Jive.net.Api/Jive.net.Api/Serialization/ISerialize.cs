@@ -2,9 +2,9 @@
 
 namespace Jive.net.Api.Serialization
 {
-	public interface ISerialize<T>
+	public interface ISerialize<in T>
 	{
-		Stream Serialize(T entity);
-		byte[] BlockSerialize(T entity);
+		byte[] ByteSerialize(T entity);
+		string StringSerialize(T entity);
 	}
 }

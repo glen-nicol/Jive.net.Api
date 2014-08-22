@@ -9,6 +9,7 @@ namespace Jive.net.Api.Serialization
 		private readonly PropertyInfo _property;
 		private string _name;
 		public string Property { get { return _name ?? _property.Name; } set { _name = value; } }
+		public Type Type { get { return _source.GetType(); } }
 
 		public EntityPropertyMap(object src, PropertyInfo prop)
 		{

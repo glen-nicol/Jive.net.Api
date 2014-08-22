@@ -6,7 +6,7 @@ namespace Jive.net.Api.Serialization
 	{
 	}
 
-	//public class JiveApiExtra : Attribute
-	//{
-	//}
+	public class JiveApiReadOnly : Attribute
+	{
+	}
 }

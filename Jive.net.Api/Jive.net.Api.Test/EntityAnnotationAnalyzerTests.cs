@@ -6,12 +6,6 @@ namespace Jive.net.Api.Test
 {
 	public class EntityAnnotationAnalyzerTests
 	{
-		private class AnnotationTestClass
-		{
-			public string NotMarked { get; set; }
-			[JiveApiOptional]
-			public string Optional { get; set; }
-		}
 		 [Test]
 		 public void AllPropertiesAreRequiredUnlessMarkedOptionalExtraNone()
 		 {

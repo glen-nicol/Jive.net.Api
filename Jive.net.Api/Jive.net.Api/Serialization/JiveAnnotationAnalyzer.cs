@@ -14,7 +14,8 @@ namespace Jive.net.Api.Serialization
 				.Where( p =>
 					{
 						var optional = p.GetCustomAttributes(typeof(JiveApiOptional), true).Any();
-						return !optional ;
+						var readOnly = p.GetCustomAttributes(typeof(JiveApiReadOnly), true).Any();
+						return !optional && !readOnly;
 					})
 				.Select(p => new EntityPropertyMap(entity, p));
 		}
@@ -25,14 +26,10 @@ namespace Jive.net.Api.Serialization
 				.Where(p =>
 				{
 					var optional = p.GetCustomAttributes(typeof(JiveApiOptional), true).Any();
-					return optional;
+					var readOnly = p.GetCustomAttributes(typeof(JiveApiReadOnly), true).Any();
+					return optional && !readOnly;
 				})
 				.Select(p => new EntityPropertyMap(entity, p));
-		}
-
-		public IEnumerable<EntityPropertyMap> ExtraProperties(T entity)
-		{
-			throw new NotImplementedException();
 		}
 	}
 }

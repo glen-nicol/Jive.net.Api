@@ -6,6 +6,6 @@ namespace Jive.net.Api.Serialization
 	{
 		IEnumerable<EntityPropertyMap> RequiredProperties(T entity);
 		IEnumerable<EntityPropertyMap> OptionalProperties(T entity);
-		IEnumerable<EntityPropertyMap> ExtraProperties(T entity);
+		//IEnumerable<EntityPropertyMap> ExtraProperties(T entity);
 	}
 }
