@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityAnnotationAnalyzerTests.cs" />
     <Compile Include="MemoryRequester.cs" />
     <Compile Include="MemoryRequesterTests.cs" />
     <Compile Include="RestRepoTest.cs" />

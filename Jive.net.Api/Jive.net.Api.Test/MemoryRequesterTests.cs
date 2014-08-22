@@ -19,7 +19,7 @@ namespace Jive.net.Api.Test
 			};
 			var res = r.Send(get);
 			Assert.AreEqual(HttpStatusCode.OK,res.StatusCode);
-			Assert.Greater(0, res.Content.ReadAsStringAsync().Result.IndexOf("bob"));
+			Assert.Greater(res.Content.ReadAsStringAsync().Result.IndexOf("bob"),0);
 		}
 
 		[Test]
