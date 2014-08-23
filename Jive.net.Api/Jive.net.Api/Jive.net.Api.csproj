@@ -52,9 +52,11 @@
     <Compile Include="DAL\IRepository.cs" />
     <Compile Include="DAL\RestRepo.cs" />
     <Compile Include="Serialization\FlagTracker.cs" />
+    <Compile Include="Serialization\GenericProxyFactory.cs" />
     <Compile Include="Serialization\IEntityMemberProvider.cs" />
     <Compile Include="Serialization\EntityPropertyMap.cs" />
     <Compile Include="Serialization\IEntityPropertyAnalyzer.cs" />
+    <Compile Include="Serialization\IInterceptorSelectorFactory.cs" />
     <Compile Include="Serialization\IPropertyAnalyzer.cs" />
     <Compile Include="Serialization\ISerialize.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -23,13 +23,13 @@ namespace Jive.net.Api.Serialization
 		public IEnumerable<EntityPropertyMap> RequiredProperties(T entity)
 		{
 			return _analyzer.RequiredProperties(entity.GetType())
-				.Select(p => new EntityPropertyMap(entity, p));
+				.Select(p => new EntityPropertyMap(entity, p.GetGetMethod()));
 		}
 
 		public IEnumerable<EntityPropertyMap> OptionalProperties(T entity)
 		{
 			return _analyzer.OptionalProperties(entity.GetType())
-				.Select(p => new EntityPropertyMap(entity, p));
+				.Select(p => new EntityPropertyMap(entity, p.GetGetMethod()));
 		}
 	}
 }

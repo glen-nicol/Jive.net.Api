@@ -4,16 +4,14 @@ namespace Jive.net.Api.Serialization
 {
 	public interface IInterceptorSelectorFactory
 	{
-		IInterceptorSelector Create();
+		IInterceptorSelector Create(ITrackChanges tracker, IPropertyAnalyzer analyzer);
 	}
 
-	class OptionalSetterFactory : IInterceptorSelectorFactory
+	public class OptionalSetterFactory : IInterceptorSelectorFactory
 	{
-
-
-		public IInterceptorSelector Create()
+		public IInterceptorSelector Create(ITrackChanges tracker, IPropertyAnalyzer analyzer)
 		{
-			return new JiveApiInterceptorSelector(new FlagTracker(), new JiveAttributeAnalyzer());
+			return new JiveApiInterceptorSelector(tracker);
 		}
 	}
 }

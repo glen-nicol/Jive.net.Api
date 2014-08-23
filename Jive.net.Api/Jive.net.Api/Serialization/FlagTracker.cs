@@ -3,7 +3,7 @@ using System.Reflection;
 
 namespace Jive.net.Api.Serialization
 {
-	class FlagTracker : ITrackChanges
+	public class FlagTracker : ITrackChanges
 	{
 		private readonly IDictionary<string, MethodInfo> _changes;
 
@@ -14,7 +14,7 @@ namespace Jive.net.Api.Serialization
 
 		public void MarkMemberChanged(MethodInfo method)
 		{
-			throw new System.NotImplementedException();
+			_changes[method.Name] = method;
 		}
 
 		public IEnumerable<MethodInfo> Changes()

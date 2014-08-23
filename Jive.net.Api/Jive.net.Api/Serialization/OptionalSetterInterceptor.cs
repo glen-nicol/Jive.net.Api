@@ -18,7 +18,10 @@ namespace Jive.net.Api.Serialization
 
 		public void Intercept(IInvocation invocation)
 		{
-			_tracker.MarkMemberChanged(invocation.Method);
+
+			var getter = invocation.TargetType.GetMethod("get_" + invocation.Method.Name.Substring(4));
+			_tracker.MarkMemberChanged(getter);
+			invocation.Proceed();
 		}
 	}
 }
