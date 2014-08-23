@@ -8,9 +8,9 @@ namespace Jive.net.Api.Serialization
 {
 	public class NaiveMemberProvider<T> : IEntityMemberProvider<T>
 	{
-		private readonly IPropertyAnalyzer<T> _analyzer;
+		private readonly IEntityPropertyAnalyzer<T> _analyzer;
 
-		public NaiveMemberProvider(IPropertyAnalyzer<T> analyzer)
+		public NaiveMemberProvider(IEntityPropertyAnalyzer<T> analyzer)
 		{
 			if (analyzer == null)
 			{

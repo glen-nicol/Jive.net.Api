@@ -10,7 +10,7 @@ namespace Jive.net.Api.Test
 	public class AnnotationTestClass
 	{
 		private string Private { get { return "Private"; } }
-		public string NotMarked { get { return "NotMarked"; } }
+		public string Required { get { return "Required"; } }
 
 		public virtual string Optional { get { return "Optional"; } }
 

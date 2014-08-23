@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Reflection;
 
 namespace Jive.net.Api.Serialization
 {
-	public interface IPropertyAnalyzer<in T>
+	public interface IPropertyAnalyzer
 	{
-		IEnumerable<EntityPropertyMap> RequiredProperties(T entity);
-		IEnumerable<EntityPropertyMap> OptionalProperties(T entity);
-		//IEnumerable<EntityPropertyMap> ExtraProperties(T entity);
+		IEnumerable<PropertyInfo> RequiredProperties(Type type);
+		IEnumerable<PropertyInfo> OptionalProperties(Type type); 
 	}
 }

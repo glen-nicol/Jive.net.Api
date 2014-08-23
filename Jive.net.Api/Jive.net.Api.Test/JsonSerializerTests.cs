@@ -10,11 +10,11 @@ namespace Jive.net.Api.Test
 		 [Test]
 		 public void ConvertsObjectToJson()
 		 {
-			 var o = new {title = "a"};
-			 var serializer = new JsonSerializer<dynamic>(new NaiveMemberProvider<dynamic>(new JiveAnnotationAnalyzer<dynamic>()));
+			 var o = new AnnotationTestClass();
+			 var serializer = new JsonSerializer<AnnotationTestClass>(new NaiveMemberProvider<AnnotationTestClass>(new JiveEntityAnalyzer<dynamic>(new JiveAttributeAnalyzer())));
 			 var json = serializer.StringSerialize(o);
 			 var result = JObject.Parse(json);
-			 Assert.AreEqual("a",result["title"].ToObject<string>());
+			 Assert.AreEqual("Required",result["Required"].ToObject<string>());
 		 }
 	}
 }
