@@ -9,9 +9,12 @@ namespace Jive.net.Api.Test
 {
 	public class AnnotationTestClass
 	{
-		public string NotMarked { get; set; }
+		private string Private { get { return "Private"; } }
+		public string NotMarked { get { return "NotMarked"; } }
 
-		[JiveApiOptional]
-		public string Optional { get; set; }
+		public virtual string Optional { get { return "Optional"; } }
+
+		[JiveApiReadOnly]
+		public virtual string ReadOnly { get { return "ReadOnly"; } }
 	}
 }
