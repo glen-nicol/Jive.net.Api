@@ -51,7 +51,8 @@
     <Compile Include="DAL\IHttpRequester.cs" />
     <Compile Include="DAL\IRepository.cs" />
     <Compile Include="DAL\RestRepo.cs" />
-    <Compile Include="Models\IJiveBody.cs" />
+    <Compile Include="Models\Discussion.cs" />
+    <Compile Include="Models\JiveBody.cs" />
     <Compile Include="Models\IJiveContent.cs" />
     <Compile Include="Models\IJiveApiObject.cs" />
     <Compile Include="Models\IJiveResource.cs" />

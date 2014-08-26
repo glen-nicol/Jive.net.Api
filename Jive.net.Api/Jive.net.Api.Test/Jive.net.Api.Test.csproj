@@ -56,6 +56,7 @@
     <Compile Include="JsonSerializerTests.cs" />
     <Compile Include="MemoryRequester.cs" />
     <Compile Include="MemoryRequesterTests.cs" />
+    <Compile Include="ModelTests\DiscussionTests.cs" />
     <Compile Include="RestRepoTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

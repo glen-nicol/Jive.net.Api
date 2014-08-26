@@ -7,7 +7,7 @@ namespace Jive.net.Models
 		[JiveApiReadOnly]
 		string ContentId { get; }
 		JiveContentType Type { get; }
-		IJiveBody Body { get; set; }
+		JiveBody Body { get; set; }
 		string Subject { get; set; }
 	}
 
