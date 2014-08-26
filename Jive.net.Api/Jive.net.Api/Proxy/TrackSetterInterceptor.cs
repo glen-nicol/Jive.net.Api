@@ -1,13 +1,13 @@
 ﻿using System;
 using Castle.DynamicProxy;
 
-namespace Jive.net.Serialization
+namespace Jive.net.Proxy
 {
-	public class OptionalSetterInterceptor : IInterceptor
+	public class TrackSetterInterceptor : IInterceptor
 	{
 		private readonly ITrackChanges _tracker;
 
-		public OptionalSetterInterceptor(ITrackChanges tracker)
+		public TrackSetterInterceptor(ITrackChanges tracker)
 		{
 			if (tracker == null)
 			{

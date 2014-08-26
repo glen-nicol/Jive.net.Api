@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Jive.net.Proxy;
 using Jive.net.Serialization;
 using NSubstitute;
 using NUnit.Framework;

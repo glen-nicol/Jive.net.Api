@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 
-namespace Jive.net.Serialization
+namespace Jive.net.Proxy
 {
 	public class FlagTracker : ITrackChanges
 	{
@@ -20,6 +21,11 @@ namespace Jive.net.Serialization
 		public IEnumerable<PropertyInfo> Changes()
 		{
 			return _changes.Values;
+		}
+
+		public bool ObjectHasChanged()
+		{
+			return Changes().Any();
 		}
 	}
 }

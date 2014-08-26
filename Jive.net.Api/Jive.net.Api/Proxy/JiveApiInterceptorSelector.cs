@@ -1,16 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Reflection;
 using Castle.DynamicProxy;
 using System.Linq;
 
-namespace Jive.net.Serialization
+namespace Jive.net.Proxy
 {
 	public class JiveApiInterceptorSelector : IInterceptorSelector
 	{
 
 		private readonly ITrackChanges _tracker;
-		private readonly OptionalSetterInterceptor _setterInterceptor;
+		private readonly TrackSetterInterceptor _setterInterceptor;
 
 		public JiveApiInterceptorSelector(ITrackChanges tracker)
 		{
@@ -20,7 +19,7 @@ namespace Jive.net.Serialization
 			}
 			_tracker = tracker;
 
-			_setterInterceptor = new OptionalSetterInterceptor(_tracker);
+			_setterInterceptor = new TrackSetterInterceptor(_tracker);
 		}
 
 		public IInterceptor[] SelectInterceptors(Type type, MethodInfo method, IInterceptor[] interceptors)

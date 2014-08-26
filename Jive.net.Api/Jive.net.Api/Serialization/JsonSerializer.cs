@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using Jive.net.Proxy;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
