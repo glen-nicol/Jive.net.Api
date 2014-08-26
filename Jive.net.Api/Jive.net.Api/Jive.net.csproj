@@ -51,6 +51,17 @@
     <Compile Include="DAL\IHttpRequester.cs" />
     <Compile Include="DAL\IRepository.cs" />
     <Compile Include="DAL\RestRepo.cs" />
+    <Compile Include="Models\IJiveBody.cs" />
+    <Compile Include="Models\IJiveContent.cs" />
+    <Compile Include="Models\IJiveApiObject.cs" />
+    <Compile Include="Models\IJiveResource.cs" />
+    <Compile Include="Models\JiveContent.cs" />
+    <Compile Include="Models\JiveField.cs" />
+    <Compile Include="Models\JiveOutComeType.cs" />
+    <Compile Include="Models\JivePerson.cs" />
+    <Compile Include="Models\JiveSummary.cs" />
+    <Compile Include="Models\JiveVia.cs" />
+    <Compile Include="Models\OnBehalfOf.cs" />
     <Compile Include="Proxy\FlagTracker.cs" />
     <Compile Include="Proxy\GenericProxyFactory.cs" />
     <Compile Include="Serialization\IEntityMemberProvider.cs" />
