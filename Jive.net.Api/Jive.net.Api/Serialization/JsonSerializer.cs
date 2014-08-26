@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -28,12 +29,12 @@ namespace Jive.net.Serialization
 
 		public string StringSerialize(T entity)
 		{
-			var json = new JObject();
+			var dict = new Dictionary<string, object>();
 			foreach (var member in _memberProvider.MembersToSerialize(entity))
 			{
-				json[member.Property] = JsonConvert.SerializeObject( member.Value());
+				dict[member.Property] =  member.Value();
 			}
-			return JsonConvert.SerializeObject(json);
+			return JsonConvert.SerializeObject(dict);
 		}
 	}
 }

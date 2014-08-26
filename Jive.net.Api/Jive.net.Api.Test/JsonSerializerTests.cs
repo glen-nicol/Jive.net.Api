@@ -17,7 +17,7 @@ namespace Jive.net.Api.Test
 			 var json = serializer.StringSerialize(o);
 			 var result = JObject.Parse(json);
 			 var req = result.GetValue("Required");
-			 Assert.AreEqual("\"Required\"",req.ToString());
+			 Assert.AreEqual("Required",req.ToString());
 		 }
 
 		[Test]
@@ -37,8 +37,9 @@ namespace Jive.net.Api.Test
 
 			var serializer = new JsonSerializer<AnnotationTestClass>(new ChangedPropertyProvider<AnnotationTestClass>(proxy.Tracker));
 			var json = serializer.StringSerialize(proxy.Entity);
-			var result = JObject.Parse(json);
-			Assert.AreEqual("\"Changed\"", (string)result["Optional"] );
+			var result =JsonConvert.DeserializeObject<AnnotationTestClass>(json,new JsonSerializerSettings{});
+			//var result = JObject.Parse(json);
+			Assert.AreEqual("Changed", result.Optional );
 
 		}
 	}
