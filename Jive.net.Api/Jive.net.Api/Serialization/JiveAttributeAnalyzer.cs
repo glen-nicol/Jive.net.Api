@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace Jive.net.Api.Serialization
+namespace Jive.net.Serialization
 {
 	public class JiveAttributeAnalyzer : IPropertyAnalyzer
 	{
@@ -34,7 +34,7 @@ namespace Jive.net.Api.Serialization
 
 		private static bool IsVirtual(PropertyInfo p)
 		{
-			return p.GetGetMethod().IsVirtual;
+			return p.GetCustomAttributes(typeof(JiveApiOptional), true).Any();
 		}
 	}
 }

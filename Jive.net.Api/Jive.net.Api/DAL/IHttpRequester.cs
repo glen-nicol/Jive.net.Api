@@ -1,9 +1,8 @@
-﻿using System;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Jive.net.Api.DAL
+namespace Jive.net.DAL
 {
 	public interface IHttpRequester
 	{

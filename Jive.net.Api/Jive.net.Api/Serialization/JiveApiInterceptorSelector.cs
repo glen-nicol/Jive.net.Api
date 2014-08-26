@@ -4,7 +4,7 @@ using System.Reflection;
 using Castle.DynamicProxy;
 using System.Linq;
 
-namespace Jive.net.Api.Serialization
+namespace Jive.net.Serialization
 {
 	public class JiveApiInterceptorSelector : IInterceptorSelector
 	{

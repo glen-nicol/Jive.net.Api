@@ -1,23 +1,23 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Reflection;
 
-namespace Jive.net.Api.Serialization
+namespace Jive.net.Serialization
 {
 	public class FlagTracker : ITrackChanges
 	{
-		private readonly IDictionary<string, MethodInfo> _changes;
+		private readonly IDictionary<string, PropertyInfo> _changes = new Dictionary<string, PropertyInfo>();
 
-		public FlagTracker()
+		public void MarkMemberChanged(PropertyInfo property)
 		{
-			_changes = new Dictionary<string, MethodInfo>();
+			if (property == null)
+			{
+				throw new ArgumentNullException("property");
+			}
+			_changes[property.Name] = property;
 		}
 
-		public void MarkMemberChanged(MethodInfo method)
-		{
-			_changes[method.Name] = method;
-		}
-
-		public IEnumerable<MethodInfo> Changes()
+		public IEnumerable<PropertyInfo> Changes()
 		{
 			return _changes.Values;
 		}

@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Jive.net.Api.DAL
+namespace Jive.net.DAL
 {
 	public class RestRepo<T> : IRepository<T>
 	{

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Jive.net.Api.Serialization
+namespace Jive.net.Serialization
 {
 	public interface IEntityMemberProvider<in T>
 	{

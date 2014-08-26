@@ -1,4 +1,4 @@
-﻿using Jive.net.Api.Serialization;
+﻿using Jive.net.Serialization;
 using System.Linq;
 using NUnit.Framework;
 
@@ -19,7 +19,7 @@ namespace Jive.net.Api.Test
 		 }
 
 		[Test]
-		public void OptionalOnlyGathersThoseMarkedVirtualAndNotReadOnly()
+		public void OptionalOnlyGathersThoseMarkedOptionalAndNotReadOnly()
 		{
 			var propertyAnalzer = new JiveEntityAnalyzer<AnnotationTestClass>(new JiveAttributeAnalyzer());
 			var anc = new AnnotationTestClass();

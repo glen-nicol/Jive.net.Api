@@ -3,7 +3,7 @@ using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace Jive.net.Api.Serialization
+namespace Jive.net.Serialization
 {
 	public class JsonSerializer<T> : ISerialize<T>
 	{

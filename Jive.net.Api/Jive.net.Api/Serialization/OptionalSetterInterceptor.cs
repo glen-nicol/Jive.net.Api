@@ -1,7 +1,7 @@
 ﻿using System;
 using Castle.DynamicProxy;
 
-namespace Jive.net.Api.Serialization
+namespace Jive.net.Serialization
 {
 	public class OptionalSetterInterceptor : IInterceptor
 	{
@@ -19,7 +19,7 @@ namespace Jive.net.Api.Serialization
 		public void Intercept(IInvocation invocation)
 		{
 
-			var getter = invocation.TargetType.GetMethod("get_" + invocation.Method.Name.Substring(4));
+			var getter = invocation.TargetType.GetProperty( invocation.Method.Name.Substring(4));
 			_tracker.MarkMemberChanged(getter);
 			invocation.Proceed();
 		}

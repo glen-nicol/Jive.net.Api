@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace Jive.net.Api.Serialization
+namespace Jive.net.Serialization
 {
-	//public class JiveApiOptional : Attribute
-	//{
-	//}
+	public class JiveApiOptional : Attribute
+	{
+	}
 
 	public class JiveApiReadOnly : Attribute
 	{

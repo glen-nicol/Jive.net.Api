@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using Jive.net.Api.Serialization;
+using Jive.net.Serialization;
 using NSubstitute;
 using Newtonsoft.Json;
 using NUnit.Framework;

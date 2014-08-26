@@ -60,9 +60,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Jive.net.Api\Jive.net.Api.csproj">
+    <ProjectReference Include="..\Jive.net.Api\Jive.net.csproj">
       <Project>{bc7053fc-54a2-4555-b3ef-040fc903e2f8}</Project>
-      <Name>Jive.net.Api</Name>
+      <Name>Jive.net</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

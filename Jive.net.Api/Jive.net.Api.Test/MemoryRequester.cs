@@ -4,7 +4,7 @@ using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using Jive.net.Api.DAL;
+using Jive.net.DAL;
 
 namespace Jive.net.Api.Test
 {

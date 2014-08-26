@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Jive.net.Api.Serialization
+namespace Jive.net.Serialization
 {
 	public class NaiveMemberProvider<T> : IEntityMemberProvider<T>
 	{

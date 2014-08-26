@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Jive.net.Api.Serialization
+namespace Jive.net.Serialization
 {
 	public class JiveEntityAnalyzer<T> : IEntityPropertyAnalyzer<T>
 	{
@@ -23,13 +23,13 @@ namespace Jive.net.Api.Serialization
 		public IEnumerable<EntityPropertyMap> RequiredProperties(T entity)
 		{
 			return _analyzer.RequiredProperties(entity.GetType())
-				.Select(p => new EntityPropertyMap(entity, p.GetGetMethod()));
+				.Select(p => new EntityPropertyMap(entity, p));
 		}
 
 		public IEnumerable<EntityPropertyMap> OptionalProperties(T entity)
 		{
 			return _analyzer.OptionalProperties(entity.GetType())
-				.Select(p => new EntityPropertyMap(entity, p.GetGetMethod()));
+				.Select(p => new EntityPropertyMap(entity, p));
 		}
 	}
 }
