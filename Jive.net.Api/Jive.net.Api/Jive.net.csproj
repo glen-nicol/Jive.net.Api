@@ -48,9 +48,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\ExpressionVisitor.cs" />
     <Compile Include="DAL\IHttpRequester.cs" />
+    <Compile Include="DAL\IJiveQueryProvider.cs" />
     <Compile Include="DAL\IRepository.cs" />
+    <Compile Include="DAL\JiveApiQuery.cs" />
+    <Compile Include="DAL\JiveApiQueryProvider.cs" />
+    <Compile Include="DAL\Query.cs" />
+    <Compile Include="DAL\QueryProvider.cs" />
+    <Compile Include="DAL\JiveApiQueryTranslator.cs" />
     <Compile Include="DAL\RestRepo.cs" />
+    <Compile Include="DAL\TypeSystem.cs" />
     <Compile Include="Models\Discussion.cs" />
     <Compile Include="Models\JiveBody.cs" />
     <Compile Include="Models\IJiveContent.cs" />

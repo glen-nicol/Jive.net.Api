@@ -54,6 +54,7 @@
     <Compile Include="EntityAnnotationAnalyzerTests.cs" />
     <Compile Include="GenericProxyTest.cs" />
     <Compile Include="JsonSerializerTests.cs" />
+    <Compile Include="LINQTests\JiveContentLINQTests.cs" />
     <Compile Include="MemoryRequester.cs" />
     <Compile Include="MemoryRequesterTests.cs" />
     <Compile Include="ModelTests\DiscussionTests.cs" />

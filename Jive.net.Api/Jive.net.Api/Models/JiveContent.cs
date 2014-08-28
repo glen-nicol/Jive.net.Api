@@ -9,7 +9,7 @@ namespace Jive.net.Models
 		public virtual string ContentId { get; private set; }
 		public string Id { get; private set; }
 		public virtual IEnumerable<IJiveResource> Resources { get; private set; }
-		public string ApiPath { get { return "contents"; } }
+		public Uri ApiPath { get { return new Uri("/contents"); } }
 		public abstract JiveContentType Type {  get;  }
 		public virtual JiveBody Body { get; set; }
 		private string _subject;

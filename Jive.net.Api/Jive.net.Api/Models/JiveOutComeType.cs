@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Jive.net.Serialization;
 
 namespace Jive.net.Models
@@ -17,7 +18,7 @@ namespace Jive.net.Models
 		public string Name { get; private set; }
 		public bool NoteRequired { get; private set; }
 		public IEnumerable<IJiveResource> Resources { get; private set; }
-		public string ApiPath { get { return "outcomeTypes"; } }
+		public Uri ApiPath { get { return new Uri("/outcomeTypes"); } }
 		public bool Shareable { get; private set; }
 		public bool UrlAllowed { get; private set; }
 
