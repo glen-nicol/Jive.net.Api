@@ -62,7 +62,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Jive.net.Api\LINQ-To-Jive.csproj">
+    <ProjectReference Include="..\Jive.Linq\LINQ-To-Jive.csproj">
       <Project>{bc7053fc-54a2-4555-b3ef-040fc903e2f8}</Project>
       <Name>LINQ-To-Jive</Name>
     </ProjectReference>
