@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace Jive.net.Serialization
+namespace Jive.Linq.Serialization
 {
 	public interface ISerialize<in T>
 	{

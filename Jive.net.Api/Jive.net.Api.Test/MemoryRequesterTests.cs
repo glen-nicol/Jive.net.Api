@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Net;
 using System.Net.Http;
+using Jive.Linq.Api.Test;
 using NUnit.Framework;
 
-namespace Jive.net.Api.Test
+namespace Jive.Linq.Test
 {
 	public class MemoryRequesterTests
 	{

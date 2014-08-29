@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace Jive.net.Serialization
+namespace Jive.Linq.Serialization
 {
 	public interface IPropertyAnalyzer
 	{

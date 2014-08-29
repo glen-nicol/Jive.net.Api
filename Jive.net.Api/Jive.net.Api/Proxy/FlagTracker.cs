@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace Jive.net.Proxy
+namespace Jive.Linq.Proxy
 {
 	public class FlagTracker : ITrackChanges
 	{

@@ -3,7 +3,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace Jive.net.DAL
+namespace Jive.Linq.DAL
 {
 	//http://blogs.msdn.com/b/mattwar/archive/2007/07/30/linq-building-an-iqueryable-provider-part-i.aspx
 	public abstract class QueryProvider : IQueryProvider

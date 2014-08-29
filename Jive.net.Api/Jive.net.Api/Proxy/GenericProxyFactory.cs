@@ -1,8 +1,8 @@
 ﻿using System;
 using Castle.DynamicProxy;
-using Jive.net.Serialization;
+using Jive.Linq.Serialization;
 
-namespace Jive.net.Proxy
+namespace Jive.Linq.Proxy
 {
 	public interface IGenericProxy<out T>
 	{

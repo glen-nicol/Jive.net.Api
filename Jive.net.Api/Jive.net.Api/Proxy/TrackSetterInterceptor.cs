@@ -1,7 +1,7 @@
 ﻿using System;
 using Castle.DynamicProxy;
 
-namespace Jive.net.Proxy
+namespace Jive.Linq.Proxy
 {
 	public class TrackSetterInterceptor : IInterceptor
 	{

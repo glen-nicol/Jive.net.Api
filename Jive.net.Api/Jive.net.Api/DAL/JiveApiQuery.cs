@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using Jive.net.Models;
+using Jive.Linq.Models;
 
-namespace Jive.net.DAL
+namespace Jive.Linq.DAL
 {
 	public abstract class JiveApiQuery<T> : IOrderedQueryable<T> where T : IJiveContent
 	{

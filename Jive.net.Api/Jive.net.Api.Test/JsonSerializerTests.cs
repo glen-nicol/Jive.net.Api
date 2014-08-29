@@ -1,12 +1,12 @@
 ﻿using System.Linq;
-using Jive.net.Proxy;
-using Jive.net.Serialization;
+using Jive.Linq.Proxy;
+using Jive.Linq.Serialization;
 using NSubstitute;
 using Newtonsoft.Json;
 using NUnit.Framework;
 using Newtonsoft.Json.Linq;
 
-namespace Jive.net.Api.Test
+namespace Jive.Linq.Test
 {
 	public class JsonSerializerTests
 	{

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace Jive.net.Serialization
+namespace Jive.Linq.Serialization
 {
 	public class JiveAttributeAnalyzer : IPropertyAnalyzer
 	{

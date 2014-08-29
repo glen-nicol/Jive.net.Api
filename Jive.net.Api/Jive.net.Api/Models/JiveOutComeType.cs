@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Jive.net.Serialization;
+using Jive.Linq.Serialization;
 
-namespace Jive.net.Models
+namespace Jive.Linq.Models
 {
 	[JiveApiReadOnly]
 	public class JiveOutComeType : IJiveApiObject

@@ -1,6 +1,6 @@
-﻿using Jive.net.Serialization;
+﻿using Jive.Linq.Serialization;
 
-namespace Jive.net.Models
+namespace Jive.Linq.Models
 {
 	public interface IJiveContent : IJiveApiObject
 	{

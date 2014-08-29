@@ -1,10 +1,10 @@
 ﻿using System.Linq;
 using System.Linq.Expressions;
-using Jive.net.DAL;
-using Jive.net.Models;
+using Jive.Linq.DAL;
+using Jive.Linq.Models;
 using NUnit.Framework;
 
-namespace Jive.net.Api.Test.LINQTests
+namespace Jive.Linq.Test.LINQTests
 {
 	public class JiveContentLINQTests
 	{

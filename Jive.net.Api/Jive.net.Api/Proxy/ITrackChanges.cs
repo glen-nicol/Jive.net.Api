@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
 
-namespace Jive.net.Proxy
+namespace Jive.Linq.Proxy
 {
 	public interface ITrackChanges
 	{

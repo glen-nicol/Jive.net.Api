@@ -1,7 +1,7 @@
 ﻿using System;
-using Jive.net.Serialization;
+using Jive.Linq.Serialization;
 
-namespace Jive.net.Models
+namespace Jive.Linq.Models
 {
 	[JiveApiReadOnly]
 	public class JiveSummary

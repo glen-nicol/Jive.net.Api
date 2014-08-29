@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace Jive.net.DAL
+namespace Jive.Linq.DAL
 {
 	public interface IRepository<T>
 	{

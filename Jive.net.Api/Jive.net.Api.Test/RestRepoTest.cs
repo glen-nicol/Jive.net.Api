@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 
 
-namespace Jive.net.Api.Test
+namespace Jive.Linq.Api.Test
 {
     public class RestRepoTest
     {

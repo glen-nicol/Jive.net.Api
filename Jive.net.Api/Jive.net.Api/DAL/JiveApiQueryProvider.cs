@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Linq.Expressions;
 using System.Text;
-using Jive.net.Models;
+using Jive.Linq.DAL;
+using Jive.Linq.Models;
 
-namespace Jive.net.DAL
+namespace Jive.Linq.DAL
 {
 	public class JiveApiQueryProvider : QueryProvider
 	{

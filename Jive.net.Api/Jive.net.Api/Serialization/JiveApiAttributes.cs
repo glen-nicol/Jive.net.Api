@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Jive.net.Serialization
+namespace Jive.Linq.Serialization
 {
 	public class JiveApiOptional : Attribute
 	{

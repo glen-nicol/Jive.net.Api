@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Jive.net.Models
+namespace Jive.Linq.Models
 {
 	public abstract class JiveContent : IJiveContent
 	{

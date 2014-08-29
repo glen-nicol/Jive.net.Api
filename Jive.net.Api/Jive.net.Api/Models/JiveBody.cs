@@ -1,4 +1,4 @@
-﻿namespace Jive.net.Models
+﻿namespace Jive.Linq.Models
 {
 	public class JiveBody
 	{

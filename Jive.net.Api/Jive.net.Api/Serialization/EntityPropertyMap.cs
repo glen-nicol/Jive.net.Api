@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
-namespace Jive.net.Serialization
+namespace Jive.Linq.Serialization
 {
 	public class EntityPropertyMap
 	{

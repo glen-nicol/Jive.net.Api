@@ -4,9 +4,9 @@ using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using Jive.net.DAL;
+using Jive.Linq.DAL;
 
-namespace Jive.net.Api.Test
+namespace Jive.Linq.Api.Test
 {
 	public class MemoryRequester: IHttpRequester
 	{

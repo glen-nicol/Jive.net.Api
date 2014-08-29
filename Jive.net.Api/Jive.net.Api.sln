@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jive.net", "Jive.net.Api\Jive.net.csproj", "{BC7053FC-54A2-4555-B3EF-040FC903E2F8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQ-To-Jive", "Jive.net.Api\LINQ-To-Jive.csproj", "{BC7053FC-54A2-4555-B3EF-040FC903E2F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jive.net.Api.Test", "Jive.net.Api.Test\Jive.net.Api.Test.csproj", "{E742E3AD-59C7-48C6-81EA-E283E4AFE359}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQ-To-Jive.Tests", "Jive.net.Api.Test\LINQ-To-Jive.Tests.csproj", "{E742E3AD-59C7-48C6-81EA-E283E4AFE359}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

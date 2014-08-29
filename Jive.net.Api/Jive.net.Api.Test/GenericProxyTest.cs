@@ -1,9 +1,10 @@
 ﻿using System.Linq;
-using Jive.net.Proxy;
-using Jive.net.Serialization;
+using Jive.Linq.Proxy;
+using Jive.Linq.Serialization;
 using NSubstitute;
 using NUnit.Framework;
-namespace Jive.net.Api.Test
+
+namespace Jive.Linq.Test
 {
 	public class GenericProxyTest
 	{

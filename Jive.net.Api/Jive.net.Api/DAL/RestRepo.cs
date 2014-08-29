@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace Jive.net.DAL
+namespace Jive.Linq.DAL
 {
 	public class RestRepo<T> : IRepository<T>
 	{

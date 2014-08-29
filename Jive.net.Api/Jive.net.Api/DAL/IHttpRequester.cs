@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Jive.net.DAL
+namespace Jive.Linq.DAL
 {
 	public interface IHttpRequester
 	{

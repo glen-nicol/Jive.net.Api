@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using ExpressionVisitor = Jive.Linq.DAL.ExpressionVisitor;
 
-namespace Jive.net.DAL
+namespace Jive.Linq.DAL
 {
 	//http://blogs.msdn.com/b/mattwar/archive/2007/07/31/linq-building-an-iqueryable-provider-part-ii.aspx
 	internal class JiveApiQueryTranslator : ExpressionVisitor

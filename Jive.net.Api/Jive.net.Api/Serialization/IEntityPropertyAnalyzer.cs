@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Jive.net.Serialization
+namespace Jive.Linq.Serialization
 {
 	public interface IEntityPropertyAnalyzer<in T>
 	{

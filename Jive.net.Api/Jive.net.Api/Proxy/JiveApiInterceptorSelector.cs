@@ -3,7 +3,7 @@ using System.Reflection;
 using Castle.DynamicProxy;
 using System.Linq;
 
-namespace Jive.net.Proxy
+namespace Jive.Linq.Proxy
 {
 	public class JiveApiInterceptorSelector : IInterceptorSelector
 	{

@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using Jive.net.Proxy;
+using Jive.Linq.Proxy;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace Jive.net.Serialization
+namespace Jive.Linq.Serialization
 {
 	public class JsonSerializer<T> : ISerialize<T>
 	{

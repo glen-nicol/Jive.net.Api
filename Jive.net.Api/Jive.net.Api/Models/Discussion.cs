@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Jive.net.Serialization;
+using Jive.Linq.Serialization;
 
-namespace Jive.net.Models
+namespace Jive.Linq.Models
 {
 	public class Discussion : JiveContent
 	{

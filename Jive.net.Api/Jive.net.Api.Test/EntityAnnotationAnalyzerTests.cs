@@ -1,8 +1,9 @@
-﻿using Jive.net.Serialization;
+﻿using Jive.Linq.Test;
+using Jive.Linq.Serialization;
 using System.Linq;
 using NUnit.Framework;
 
-namespace Jive.net.Api.Test
+namespace Jive.Linq.Test
 {
 	public class EntityAnnotationAnalyzerTests
 	{

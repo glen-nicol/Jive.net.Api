@@ -1,8 +1,8 @@
 ﻿using System;
-using Jive.net.Models;
+using Jive.Linq.Models;
 using NUnit.Framework;
 
-namespace Jive.net.Api.Test.ModelTests
+namespace Jive.Linq.Test.ModelTests
 {
 	public class DiscussionTests
 	{

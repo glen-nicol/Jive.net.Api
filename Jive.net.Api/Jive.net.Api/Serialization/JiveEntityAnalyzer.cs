@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Jive.net.Serialization
+namespace Jive.Linq.Serialization
 {
 	public class JiveEntityAnalyzer<T> : IEntityPropertyAnalyzer<T>
 	{
