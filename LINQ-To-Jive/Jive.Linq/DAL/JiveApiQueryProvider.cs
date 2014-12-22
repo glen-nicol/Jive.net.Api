@@ -31,7 +31,8 @@ namespace Jive.Linq.DAL
 
 		private string Translate(Expression expression)
 		{
-			var sb = new StringBuilder("/search/");
+			expression = Evaluator.PartialEval(expression);
+			var sb = new StringBuilder("/");
 			sb.Append(_jiveObjectApiSearchPrefix);
 			sb.Append("?");
 			sb.Append(new JiveApiQueryTranslator().Translate(expression));

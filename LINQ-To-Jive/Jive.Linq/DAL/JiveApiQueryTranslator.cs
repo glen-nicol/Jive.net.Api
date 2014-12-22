@@ -10,36 +10,19 @@ namespace Jive.Linq.DAL
 	//http://blogs.msdn.com/b/mattwar/archive/2007/07/31/linq-building-an-iqueryable-provider-part-ii.aspx
 	internal class JiveApiQueryTranslator : ExpressionVisitor
 	{
-		StringBuilder sb;
-		private HashSet<string> _searchKeys;
 
-
+		
+		private readonly JiveApiFilterFactory _factory = new JiveApiFilterFactory();
+		private readonly JiveFilterCollection _filters = new JiveFilterCollection();
 		internal JiveApiQueryTranslator()
 		{
 		}
 
 		internal string Translate(Expression expression)
 		{
-			sb = new StringBuilder();
-			_searchKeys = new HashSet<string>();
+
 			this.Visit(expression);
-			
-			if (_searchKeys.Count > 0)
-			{
-				const string seed = "&search=(";
-				var searchBuilder = new StringBuilder(seed);
-				foreach (var searchKey in _searchKeys)
-				{
-					if (searchBuilder.Length > seed.Length)
-					{
-						searchBuilder.Append(",");
-					}
-					searchBuilder.Append(searchKey);
-				}
-				searchBuilder.Append(")");
-				sb.Append(searchBuilder.ToString());
-			}
-			return this.sb.ToString();
+			return string.Join("&", _filters.Select(f => f.ToString())) ;
 		}
 
 		private static Expression StripQuotes(Expression e)
@@ -67,7 +50,7 @@ namespace Jive.Linq.DAL
 			switch (u.NodeType)
 			{
 				case ExpressionType.Not:
-					sb.Append(" NOT ");
+					
 					this.Visit(u.Operand);
 					break;
 				default:
@@ -82,30 +65,33 @@ namespace Jive.Linq.DAL
 			this.Visit(b.Left);
 			switch (b.NodeType)
 			{
+					//logical
 				case ExpressionType.And:
-					sb.Append(" AND ");
-					break;
 				case ExpressionType.Or:
-					sb.Append(" OR");
+				case ExpressionType.OrElse:
+
 					break;
+					//comparison
 				case ExpressionType.Equal:
-					//sb.Append(" = ");
-					break;
 				case ExpressionType.NotEqual:
-					sb.Append(" <> ");
-					break;
 				case ExpressionType.LessThan:
-					sb.Append(" < ");
-					break;
 				case ExpressionType.LessThanOrEqual:
-					sb.Append(" <= ");
-					break;
 				case ExpressionType.GreaterThan:
-					sb.Append(" > ");
-					break;
 				case ExpressionType.GreaterThanOrEqual:
-					sb.Append(" >= ");
+					try
+					{
+						var filter = _factory.CreateFilter(b);
+						_filters.Add(filter);
+
+					}
+					catch (Exception)
+					{
+						
+						throw;
+					}
+
 					break;
+
 				default:
 					throw new NotSupportedException(string.Format("The binary operator '{0}' is not supported", b.NodeType));
 			}
@@ -120,27 +106,27 @@ namespace Jive.Linq.DAL
 			if (q != null)
 			{
 				// assume constant nodes w/ IQueryables are table references
-				sb.Append("SELECT * FROM ");
-				sb.Append(q.ElementType.Name);
+				//sb.Append("SELECT * FROM ");
+				//sb.Append(q.ElementType.Name);
 			}
 			else if (c.Value == null)
 			{
-				sb.Append("NULL");
+				//sb.Append("NULL");
 			}
 			else
 			{
 				switch (Type.GetTypeCode(c.Value.GetType()))
 				{
 					case TypeCode.Boolean:
-						sb.Append(((bool)c.Value) ? 1 : 0);
+						//sb.Append(((bool)c.Value) ? 1 : 0);
 						break;
 					case TypeCode.String:
-						_searchKeys.Add((string)c.Value);
+						//_searchKeys.Add((string)c.Value);
 						break;
 					case TypeCode.Object:
 						throw new NotSupportedException(string.Format("The constant for '{0}' is not supported", c.Value));
 					default:
-						sb.Append(c.Value);
+						//sb.Append(c.Value);
 						break;
 				}
 			}
