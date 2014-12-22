@@ -20,9 +20,8 @@ namespace Jive.Linq.Test.LINQTests
 		{
 			var prov = new JiveApiQueryProvider("contents");
 			var ctx = new JiveContext(prov);
-			var s = "A";
 			var content = from c in ctx.Content
-				where c.Subject == s
+				where c.Subject == "A"
 				select c;
 
 			Assert.AreEqual("/contents?filter=search(A)", prov.GetQueryText(content.Expression));
@@ -38,6 +37,43 @@ namespace Jive.Linq.Test.LINQTests
 						  select c;
 
 			Assert.AreEqual("/contents?filter=search(A,B)", prov.GetQueryText(content.Expression));
+		}
+
+		[Test]
+		public void ProducesFilterForSearchOnContentType()
+		{
+			var prov = new JiveApiQueryProvider("contents");
+			var ctx = new JiveContext(prov);
+			var content = from c in ctx.Content
+						  where (c.Type == JiveContentType.Discussion)
+						  select c;
+
+			Assert.AreEqual("/contents?filter=type(discussion)", prov.GetQueryText(content.Expression));
+		}
+
+		[Test]
+		public void ProducesFilterForSearchOnMultipleContentTypes()
+		{
+			var prov = new JiveApiQueryProvider("contents");
+			var ctx = new JiveContext(prov);
+			var content = from c in ctx.Content
+						  where (c.Type == JiveContentType.Discussion || c.Type == JiveContentType.Document)
+						  select c;
+
+			Assert.AreEqual("/contents?filter=type(discussion,document)", prov.GetQueryText(content.Expression));
+		}
+
+		[Test]
+		public void SupportsLocalStringVariable()
+		{
+			var prov = new JiveApiQueryProvider("contents");
+			var ctx = new JiveContext(prov);
+			var s = "A";
+			var content = from c in ctx.Content
+						  where c.Subject == s
+						  select c;
+
+			Assert.AreEqual("/contents?filter=search(A)", prov.GetQueryText(content.Expression));
 		}
 	}
 }

@@ -11,9 +11,14 @@ namespace Jive.Linq.DAL
 	{
 		private readonly IDictionary<string, IJiveFilter> _filters = new Dictionary<string, IJiveFilter>();
 
+
+		private bool SupportsMultipleFilters(string type)
+		{
+			return type == "search" || type == "type";
+		}
 		public void Add(IJiveFilter f)
 		{
-			if (f.FilterType == "search" && _filters.ContainsKey(f.FilterType))
+			if (SupportsMultipleFilters(f.FilterType) && _filters.ContainsKey(f.FilterType))
 			{
 
 				_filters[f.FilterType] = new JiveFilter(f.FilterType, _filters[f.FilterType].Value + "," + f.Value);

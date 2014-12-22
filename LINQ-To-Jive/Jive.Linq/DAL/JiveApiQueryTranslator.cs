@@ -50,7 +50,7 @@ namespace Jive.Linq.DAL
 			switch (u.NodeType)
 			{
 				case ExpressionType.Not:
-					
+				case ExpressionType.Convert:
 					this.Visit(u.Operand);
 					break;
 				default:
