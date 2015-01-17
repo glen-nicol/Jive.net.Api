@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Jive.Linq.Models;
 
@@ -16,53 +17,32 @@ namespace Jive.Linq.DAL
 			{
 				case "Subject":
 				case "Type": 
+				case "Text":
 					return true;
 				default:
 					return false;
 			}
 		}
 
-		private static object ExtractValue(Expression b)
-		{
-			var expression = b as ConstantExpression;
-			return expression != null ? expression.Value : null;
-		}
 
-		public IJiveFilter CreateFilter(BinaryExpression b)
+
+		public IJiveFilter CreateFilter(FieldComparison fc)
 		{
-			MemberExpression filterSide;
-			string value;
-			try
-			{
-				filterSide = (MemberExpression)(b.Left.NodeType == ExpressionType.MemberAccess ? b.Left : b.Right);
-				value = ExtractValue(filterSide == b.Left ? b.Right : b.Left).ToString();
-			}
-			catch (InvalidCastException)
-			{
-				var leftSide = b.Left.NodeType == ExpressionType.Convert;
-				filterSide = (MemberExpression)((UnaryExpression)(leftSide ? b.Left : b.Right)).Operand;
-				var name = Enum.GetName(typeof(JiveContentType), ExtractValue(leftSide ? b.Right : b.Left));
-				value = name != null ? name.ToLower() : "";
-			}
+			fc.Value = Regex.Replace(fc.Value, @"([,\\\(\)])", "\\$1");
 			
-			
-			if (IsSupportedMember(filterSide.Member.Name))
+			if (IsSupportedMember(fc.Field))
 			{
-				if (filterSide.Member.Name == "Type")
+				if (fc.Field == "Type")
 				{
-					return new JiveFilter("type", value);
+					return new JiveFilter("type", fc.Value);
 				}
 				else
 				{
-					return new JiveFilter("search", value);
+					return new JiveFilter("search", fc.Value);
 				}
 				}
-				
-			else
-			{
-				throw new NotSupportedException("Cannot filter on " + filterSide.Member.Name);
-			}
-			
+
+			throw new NotSupportedException("Cannot filter on " + fc.Field);
 		}
 	}
 }

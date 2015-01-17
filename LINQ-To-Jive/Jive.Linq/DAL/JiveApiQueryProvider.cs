@@ -2,7 +2,6 @@
 using System.Linq.Expressions;
 using System.Text;
 using Jive.Linq.DAL;
-using Jive.Linq.Models;
 
 namespace Jive.Linq.DAL
 {
@@ -21,33 +20,23 @@ namespace Jive.Linq.DAL
 
 		public override string GetQueryText(Expression expression)
 		{
-			return Translate(expression);
+			//var sb = new StringBuilder("/");
+			//sb.Append(_jiveObjectApiSearchPrefix);
+			//sb.Append("?");
+			var calls = Translate(expression);
+
+			return string.Join("\n",calls);
 		}
 
 		public override object Execute(Expression expression)
 		{
-			return GetQueryText(expression);
+			return Translate(expression);
 		}
 
-		private string Translate(Expression expression)
+		private static ApiCallCollection Translate(Expression expression)
 		{
 			expression = Evaluator.PartialEval(expression);
-			var sb = new StringBuilder("/");
-			sb.Append(_jiveObjectApiSearchPrefix);
-			sb.Append("?");
-			sb.Append(new JiveApiQueryTranslator().Translate(expression));
-			return sb.ToString();
+			return new JiveApiQueryTranslator().Translate(expression);
 		}
-	}
-
-	public class JiveContext
-	{
-		public Query<IJiveContent> Content { get; private set; }
-
-		public JiveContext(JiveApiQueryProvider provider)
-		{
-			Content = new Query<IJiveContent>(provider);
-		}
-
 	}
 }

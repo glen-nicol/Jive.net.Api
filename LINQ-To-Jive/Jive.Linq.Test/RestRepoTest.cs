@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
-
-namespace Jive.Linq.Api.Test
+namespace Jive.Linq.Test
 {
     public class RestRepoTest
     {

@@ -14,15 +14,25 @@ namespace Jive.Linq.DAL
 		
 		private readonly JiveApiFilterFactory _factory = new JiveApiFilterFactory();
 		private readonly JiveFilterCollection _filters = new JiveFilterCollection();
+		private readonly ApiCallCollection _apiCalls = new ApiCallCollection();
 		internal JiveApiQueryTranslator()
 		{
 		}
 
-		internal string Translate(Expression expression)
+		internal ApiCallCollection Translate(Expression expression)
 		{
 
 			this.Visit(expression);
-			return string.Join("&", _filters.Select(f => f.ToString())) ;
+			if (_filters.Count > 0)
+			{
+				_apiCalls.AddRestCall("/contents?" + string.Join("&", _filters.Select(f => f.ToString())));
+			}
+			if (_apiCalls.Count == 0)
+			{
+				_apiCalls.AddRestCall("/contents?");
+			}
+
+			return  _apiCalls;
 		}
 
 		private static Expression StripQuotes(Expression e)
@@ -80,8 +90,17 @@ namespace Jive.Linq.DAL
 				case ExpressionType.GreaterThanOrEqual:
 					try
 					{
-						var filter = _factory.CreateFilter(b);
-						_filters.Add(filter);
+						var fc = FieldComparison.Create(b);
+						if (LookingForSpecificContent(fc))
+						{
+							_apiCalls.AddRestCall("/contents/" + fc.Value);
+						}
+						else
+						{
+							var filter = _factory.CreateFilter(fc);
+							_filters.Add(filter);
+						}
+
 
 					}
 					catch (Exception)
@@ -98,6 +117,12 @@ namespace Jive.Linq.DAL
 			this.Visit(b.Right);
 			//sb.Append(")");
 			return b;
+		}
+
+		private static bool LookingForSpecificContent(FieldComparison fc)
+		{
+			return fc.Field.ToUpper().EndsWith("ID");
+
 		}
 
 		protected override Expression VisitConstant(ConstantExpression c)
@@ -135,7 +160,7 @@ namespace Jive.Linq.DAL
 
 		protected override Expression VisitMemberAccess(MemberExpression m)
 		{
-			if (m.Expression != null && m.Expression.NodeType == ExpressionType.Parameter)
+			if (m.Expression != null && (m.Expression.NodeType == ExpressionType.Parameter || m.Expression.NodeType == ExpressionType.MemberAccess))
 			{
 				//sb.Append(m.Member.Name);
 				return m;

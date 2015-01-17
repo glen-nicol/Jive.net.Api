@@ -53,6 +53,7 @@
     <Compile Include="AnnotationEntity.cs" />
     <Compile Include="EntityAnnotationAnalyzerTests.cs" />
     <Compile Include="GenericProxyTest.cs" />
+    <Compile Include="LINQTests\JiveContextTest.cs" />
     <Compile Include="JsonSerializerTests.cs" />
     <Compile Include="LINQTests\JiveContentLINQTests.cs" />
     <Compile Include="MemoryRequester.cs" />

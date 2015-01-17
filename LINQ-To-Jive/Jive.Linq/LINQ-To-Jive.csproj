@@ -48,8 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\ApiCallCollection.cs" />
     <Compile Include="DAL\Evaluator.cs" />
     <Compile Include="DAL\ExpressionVisitor.cs" />
+    <Compile Include="DAL\FieldComparison.cs" />
     <Compile Include="DAL\IHttpRequester.cs" />
     <Compile Include="DAL\IJiveFilter.cs" />
     <Compile Include="DAL\IJiveQueryProvider.cs" />
@@ -57,6 +59,7 @@
     <Compile Include="DAL\JiveApiFilterFactory.cs" />
     <Compile Include="DAL\JiveApiQuery.cs" />
     <Compile Include="DAL\JiveApiQueryProvider.cs" />
+    <Compile Include="DAL\JiveContext.cs" />
     <Compile Include="DAL\JiveFilterCollection.cs" />
     <Compile Include="DAL\Query.cs" />
     <Compile Include="DAL\QueryProvider.cs" />

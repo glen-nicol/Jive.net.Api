@@ -6,7 +6,7 @@ using NUnit.Framework;
 
 namespace Jive.Linq.Test.LINQTests
 {
-	public class JiveContentLINQTests
+	public class JiveContentLinqTests
 	{
 		 [Test]
 		 public void ProducesValidRootUrl()
@@ -28,6 +28,30 @@ namespace Jive.Linq.Test.LINQTests
 		}
 
 		[Test]
+		public void EscapesAllSpecialCharactersInSubject()
+		{
+			var prov = new JiveApiQueryProvider("contents");
+			var ctx = new JiveContext(prov);
+			var content = from c in ctx.Content
+						  where c.Subject == ",()\\"
+						  select c;
+
+			Assert.AreEqual("/contents?filter=search(\\,\\(\\)\\\\)", prov.GetQueryText(content.Expression));
+		}
+
+		[Test]
+		public void ProducesFilterForSearchOnContent()
+		{
+			var prov = new JiveApiQueryProvider("contents");
+			var ctx = new JiveContext(prov);
+			var content = from c in ctx.Content
+						  where c.Body.Text == "A"
+						  select c;
+
+			Assert.AreEqual("/contents?filter=search(A)", prov.GetQueryText(content.Expression));
+		}
+
+		[Test]
 		public void ProducesFilterForSearchOnMultipleSubjects()
 		{
 			var prov = new JiveApiQueryProvider("contents");
@@ -37,6 +61,18 @@ namespace Jive.Linq.Test.LINQTests
 						  select c;
 
 			Assert.AreEqual("/contents?filter=search(A,B)", prov.GetQueryText(content.Expression));
+		}
+
+		[Test]
+		public void ProducesFilterForSearchOnId()
+		{
+			var prov = new JiveApiQueryProvider("contents");
+			var ctx = new JiveContext(prov);
+			var content = (from c in ctx.Content
+						  where c.ContentId == "1"
+						  select c);
+
+			Assert.AreEqual("/contents/1", prov.GetQueryText(content.Expression));
 		}
 
 		[Test]
