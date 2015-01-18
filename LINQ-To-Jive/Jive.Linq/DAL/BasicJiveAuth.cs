@@ -1,4 +1,7 @@
-﻿using System.Security.Authentication;
+﻿using System;
+using System.Net.Http.Headers;
+using System.Security.Authentication;
+using System.Text;
 
 namespace Jive.Linq.DAL
 {
@@ -17,14 +20,9 @@ namespace Jive.Linq.DAL
 			_password = pass;
 		}
 
-		public bool OAuth
+		public AuthenticationHeaderValue GetAuthorizationToken()
 		{
-			get { return false; }
-		}
-
-		public virtual string GetAuthorizationToken()
-		{
-			return _username + ":" + _password;
+			return new AuthenticationHeaderValue("Basic",Convert.ToBase64String(Encoding.Unicode.GetBytes(_username + ":" + _password)));
 		}
 
 		public virtual void HandleRefreshToken(RefreshToken token)

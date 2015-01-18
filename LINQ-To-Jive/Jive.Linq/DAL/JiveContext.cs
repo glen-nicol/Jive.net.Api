@@ -13,10 +13,10 @@ namespace Jive.Linq.DAL
 
 		public JiveContext(IAuthenticateJive authenticator)
 		{
-			Content = new Query<IJiveContent>(new JiveApiQueryProvider(new HttpRequester(), "/contents"));
+			Content = new Query<IJiveContent>(new JiveApiQueryProvider(new AuthenticatedRequester(authenticator,new HttpRequester()), "/contents"));
 		}
 
-		public JiveContext(IHttpRequester requester, IAuthenticateJive authenticator)
+		public JiveContext(IHttpRequester requester)
 		{
 			
 		}

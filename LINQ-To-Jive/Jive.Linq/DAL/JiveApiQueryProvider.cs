@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
@@ -56,8 +57,8 @@ namespace Jive.Linq.DAL
 					RequestUri = new Uri("http://jiveon.sandbox.com/api/core/v3" + restCall),
 					Method = HttpMethod.Get
 				};
-				var response =  await _requester.SendAsync(request);
-				return JsonConvert.DeserializeObject<IJiveContent[]>(response.Content.ToString(), new JsonSerializerSettings { });
+			var response =  await _requester.SendAsync(request);
+			return JsonConvert.DeserializeObject<IJiveContent[]>(response.Content.ToString(), new JsonSerializerSettings { });
 		}
 
 		private static ApiCallCollection Translate(Expression expression)

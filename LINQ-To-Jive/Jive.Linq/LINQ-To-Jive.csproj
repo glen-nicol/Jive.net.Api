@@ -49,10 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\ApiCallCollection.cs" />
+    <Compile Include="DAL\AuthenticatedRequester.cs" />
     <Compile Include="DAL\BasicJiveAuth.cs" />
     <Compile Include="DAL\Evaluator.cs" />
     <Compile Include="DAL\ExpressionVisitor.cs" />
     <Compile Include="DAL\FieldComparison.cs" />
+    <Compile Include="DAL\HttpRequester.cs" />
     <Compile Include="DAL\IAuthenticateJive.cs" />
     <Compile Include="DAL\IHttpRequester.cs" />
     <Compile Include="DAL\IJiveFilter.cs" />
