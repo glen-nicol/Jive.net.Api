@@ -38,7 +38,7 @@ namespace Jive.Linq.Test
 
 			var serializer = new JsonSerializer<AnnotationTestClass>(new ChangedPropertyProvider<AnnotationTestClass>(proxy.Tracker));
 			var json = serializer.StringSerialize(proxy.Entity);
-			var result =JsonConvert.DeserializeObject<AnnotationTestClass>(json,new JsonSerializerSettings{});
+			var result = JsonConvert.DeserializeObject<AnnotationTestClass>(json,new JsonSerializerSettings{});
 			//var result = JObject.Parse(json);
 			Assert.AreEqual("Changed", result.Optional );
 

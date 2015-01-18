@@ -28,6 +28,11 @@ namespace Jive.Linq.Api.Test
 			}
 		}
 
+		public Task<HttpResponseMessage> SendAsync(HttpRequestMessage req)
+		{
+			throw new NotImplementedException();
+		}
+
 		public Task<HttpResponseMessage> SendAsync(HttpRequestMessage req, CancellationToken token)
 		{
 			var task = SetupSendAsync(req, token);

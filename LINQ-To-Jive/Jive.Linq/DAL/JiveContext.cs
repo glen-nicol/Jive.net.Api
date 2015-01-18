@@ -11,5 +11,14 @@ namespace Jive.Linq.DAL
 			Content = new Query<IJiveContent>(provider);
 		}
 
+		public JiveContext(IAuthenticateJive authenticator)
+		{
+			Content = new Query<IJiveContent>(new JiveApiQueryProvider(new HttpRequester(), "/contents"));
+		}
+
+		public JiveContext(IHttpRequester requester, IAuthenticateJive authenticator)
+		{
+			
+		}
 	}
 }
