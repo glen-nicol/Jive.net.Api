@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnnotationEntity.cs" />
+    <Compile Include="DeserializeTests\DeserializeContentTests.cs" />
     <Compile Include="EntityAnnotationAnalyzerTests.cs" />
     <Compile Include="GenericProxyTest.cs" />
     <Compile Include="LINQTests\JiveContextTest.cs" />

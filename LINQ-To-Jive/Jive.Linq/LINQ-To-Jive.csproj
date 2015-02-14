@@ -72,10 +72,12 @@
     <Compile Include="DAL\RestRepo.cs" />
     <Compile Include="DAL\TypeSystem.cs" />
     <Compile Include="Models\Discussion.cs" />
+    <Compile Include="Models\IJivePerson.cs" />
     <Compile Include="Models\JiveBody.cs" />
     <Compile Include="Models\IJiveContent.cs" />
     <Compile Include="Models\IJiveApiObject.cs" />
-    <Compile Include="Models\IJiveResource.cs" />
+    <Compile Include="Models\JiveContactInfo.cs" />
+    <Compile Include="Models\JiveResource.cs" />
     <Compile Include="Models\JiveContent.cs" />
     <Compile Include="Models\JiveField.cs" />
     <Compile Include="Models\JiveOutComeType.cs" />

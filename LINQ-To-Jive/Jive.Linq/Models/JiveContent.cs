@@ -1,17 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace Jive.Linq.Models
 {
 	public abstract class JiveContent : IJiveContent
 	{
 		public virtual string ApiId { get { return ContentId; } }
+
+		[JsonProperty(PropertyName = "contentID")]
 		public virtual string ContentId { get; private set; }
+
 		public string Id { get; private set; }
-		public virtual IEnumerable<IJiveResource> Resources { get; private set; }
+
+		public virtual IDictionary<string,JiveResource> Resources { get; private set; }
+
 		public Uri ApiPath { get { return new Uri("/contents"); } }
+
 		public abstract JiveContentType Type {  get;  }
+
 		public virtual JiveBody Body { get; set; }
+
 		private string _subject;
 		public virtual string Subject
 		{

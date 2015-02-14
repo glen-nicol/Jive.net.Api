@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Jive.Linq.Serialization;
+using Newtonsoft.Json;
 
 namespace Jive.Linq.Models
 {
@@ -17,6 +18,7 @@ namespace Jive.Linq.Models
 		[JiveApiOptional]
 		public OnBehalfOf OnBehalfOf { get;  set; }
 		[JiveApiOptional]
+		[JsonProperty(PropertyName = "outcomeTypes")]
 		public virtual ICollection<JiveOutComeType> OutcomeTypes { get; private set; }
 		[JiveApiOptional]
 		public Uri Parent { get; set; }
@@ -26,7 +28,8 @@ namespace Jive.Linq.Models
 		[JiveApiReadOnly]
 		public virtual Uri Answer { get; private set; }
 		[JiveApiReadOnly]
-		public virtual JivePerson Person { get; private set; }
+		[JsonProperty(PropertyName = "author")]
+		public virtual JivePerson Author { get; private set; }
 		[JiveApiReadOnly]
 		public virtual ulong FollowerCount { get; private set; }
 		[JiveApiReadOnly]
@@ -53,6 +56,7 @@ namespace Jive.Linq.Models
 		[JiveApiReadOnly]
 		public virtual bool ParentVisible { get; private set; }
 		[JiveApiReadOnly]
+		[JsonProperty(PropertyName = "published")]
 		public virtual DateTime Published { get; private set; }
 		[JiveApiReadOnly]
 		public virtual bool Question { get; private set; }
@@ -65,6 +69,7 @@ namespace Jive.Linq.Models
 		[JiveApiReadOnly]
 		public virtual string Status { get; private set; }
 		[JiveApiReadOnly]
+		[JsonProperty(PropertyName = "updated")]
 		public virtual DateTime Updated { get; private set; }
 		[JiveApiReadOnly]
 		public virtual ulong ViewCount { get; private set; }

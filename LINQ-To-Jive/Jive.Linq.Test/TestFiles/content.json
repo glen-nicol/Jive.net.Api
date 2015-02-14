@@ -1,0 +1,257 @@
+{
+    "id" : "19248",
+    "resources" : {
+      "sameQuestion" : {
+        "allowed" : [ "GET" ],
+        "ref" : "https://sandbox.jiveon.com/api/core/v3/questions/103925/sameQuestion"
+      },
+      "self" : {
+        "allowed" : [ "DELETE", "GET", "PUT" ],
+        "ref" : "https://sandbox.jiveon.com/api/core/v3/contents/103925"
+      },
+      "childOutcomeTypes" : {
+        "allowed" : [ "GET" ],
+        "ref" : "https://sandbox.jiveon.com/api/core/v3/contents/103925/childOutcomeTypes"
+      },
+      "messages" : {
+        "allowed" : [ "GET", "POST" ],
+        "ref" : "https://sandbox.jiveon.com/api/core/v3/messages/contents/103925"
+      },
+      "outcomeTypes" : {
+        "allowed" : [ "GET" ],
+        "ref" : "https://sandbox.jiveon.com/api/core/v3/contents/103925/outcomeTypes"
+      },
+      "extprops" : {
+        "allowed" : [ "DELETE", "GET", "POST" ],
+        "ref" : "https://sandbox.jiveon.com/api/core/v3/contents/103925/extprops"
+      },
+      "outcomes" : {
+        "allowed" : [ "GET", "POST" ],
+        "ref" : "https://sandbox.jiveon.com/api/core/v3/contents/103925/outcomes"
+      },
+      "followers" : {
+        "allowed" : [ "GET" ],
+        "ref" : "https://sandbox.jiveon.com/api/core/v3/contents/103925/followers"
+      },
+      "likes" : {
+        "allowed" : [ "GET" ],
+        "ref" : "https://sandbox.jiveon.com/api/core/v3/contents/103925/likes"
+      },
+      "read" : {
+        "allowed" : [ "DELETE", "POST" ],
+        "ref" : "https://sandbox.jiveon.com/api/core/v3/contents/103925/read"
+      },
+      "html" : {
+        "allowed" : [ "GET" ],
+        "ref" : "https://sandbox.jiveon.com/thread/19248"
+      },
+      "attachments" : {
+        "allowed" : [ "GET", "POST" ],
+        "ref" : "https://sandbox.jiveon.com/api/core/v3/attachments/contents/103925"
+      },
+      "followingIn" : {
+        "allowed" : [ "GET", "POST" ],
+        "ref" : "https://sandbox.jiveon.com/api/core/v3/contents/103925/followingIn"
+      },
+      "entitlements" : {
+        "allowed" : [ "GET" ],
+        "ref" : "https://sandbox.jiveon.com/api/core/v3/contents/103925/entitlements"
+      }
+    },
+    "followerCount" : 1,
+    "likeCount" : 0,
+    "published" : "2015-01-17T19:55:45.279+0000",
+    "tags" : [ ],
+    "updated" : "2015-01-17T19:55:45.279+0000",
+    "iconCss" : "jive-icon-discussion-question",
+    "parentPlace" : {
+      "id" : "1201",
+      "html" : "https://sandbox.jiveon.com/groups/github4jive-testing/projects/g4j-demo",
+      "name" : "G4J Demo",
+      "type" : "project",
+      "uri" : "https://sandbox.jiveon.com/api/core/v3/places/92222"
+    },
+    "contentID" : "103925",
+    "author" : {
+      "id" : "3170",
+      "resources" : {
+        "trendingPlaces" : {
+          "allowed" : [ "GET" ],
+          "ref" : "https://sandbox.jiveon.com/api/core/v3/people/3170/@trendingPlaces"
+        },
+        "trendingContent" : {
+          "allowed" : [ "GET" ],
+          "ref" : "https://sandbox.jiveon.com/api/core/v3/people/3170/@trendingContent"
+        },
+        "reports" : {
+          "allowed" : [ "GET" ],
+          "ref" : "https://sandbox.jiveon.com/api/core/v3/people/3170/@reports"
+        },
+        "securityGroups" : {
+          "allowed" : [ "GET" ],
+          "ref" : "https://sandbox.jiveon.com/api/core/v3/people/3170/securityGroups"
+        },
+        "manager" : {
+          "allowed" : [ "GET" ],
+          "ref" : "https://sandbox.jiveon.com/api/core/v3/people/3170/@manager"
+        },
+        "recognition" : {
+          "allowed" : [ "GET" ],
+          "ref" : "https://sandbox.jiveon.com/api/core/v3/people/3170/@recognition"
+        },
+        "pages" : {
+          "allowed" : [ "GET", "POST" ],
+          "ref" : "https://sandbox.jiveon.com/api/core/v3/people/3170/pages"
+        },
+        "self" : {
+          "allowed" : [ "DELETE", "GET", "PUT" ],
+          "ref" : "https://sandbox.jiveon.com/api/core/v3/people/3170"
+        },
+        "tasks" : {
+          "allowed" : [ "GET", "POST" ],
+          "ref" : "https://sandbox.jiveon.com/api/core/v3/people/3170/tasks"
+        },
+        "avatar" : {
+          "allowed" : [ "GET" ],
+          "ref" : "https://sandbox.jiveon.com/api/core/v3/people/3170/avatar?a=1001"
+        },
+        "colleagues" : {
+          "allowed" : [ "GET" ],
+          "ref" : "https://sandbox.jiveon.com/api/core/v3/people/3170/@colleagues"
+        },
+        "extprops" : {
+          "allowed" : [ "DELETE", "GET", "POST" ],
+          "ref" : "https://sandbox.jiveon.com/api/core/v3/people/3170/extprops"
+        },
+        "followers" : {
+          "allowed" : [ "GET" ],
+          "ref" : "https://sandbox.jiveon.com/api/core/v3/people/3170/@followers"
+        },
+        "following" : {
+          "allowed" : [ "GET" ],
+          "ref" : "https://sandbox.jiveon.com/api/core/v3/people/3170/@following"
+        },
+        "social" : {
+          "allowed" : [ "GET" ],
+          "ref" : "https://sandbox.jiveon.com/api/core/v3/people/3170/@social"
+        },
+        "images" : {
+          "allowed" : [ "GET", "POST" ],
+          "ref" : "https://sandbox.jiveon.com/api/core/v3/people/3170/images"
+        },
+        "streams" : {
+          "allowed" : [ "GET", "POST" ],
+          "ref" : "https://sandbox.jiveon.com/api/core/v3/people/3170/streams"
+        },
+        "html" : {
+          "allowed" : [ "GET" ],
+          "ref" : "https://sandbox.jiveon.com/people/glen.nicol"
+        },
+        "followingIn" : {
+          "allowed" : [ "GET", "POST" ],
+          "ref" : "https://sandbox.jiveon.com/api/core/v3/people/3170/followingIn"
+        },
+        "activity" : {
+          "allowed" : [ "GET" ],
+          "ref" : "https://sandbox.jiveon.com/api/core/v3/people/3170/activities"
+        },
+        "members" : {
+          "allowed" : [ "GET" ],
+          "ref" : "https://sandbox.jiveon.com/api/core/v3/members/people/3170"
+        }
+      },
+      "displayName" : "Glen Nicol",
+      "emails" : [ {
+        "jive_label" : "Email",
+        "primary" : true,
+        "type" : "work",
+        "value" : "glen.nicol@jivesoftware.com",
+        "jive_displayOrder" : 3,
+        "jive_summaryDisplayOrder" : 2,
+        "jive_showSummaryLabel" : true
+      } ],
+      "jive" : {
+        "level" : {
+          "imageURI" : "https://sandbox.jiveon.com/api/core/v3/images/status/statusicon-49.gif",
+          "name" : "Adventurer",
+          "points" : 234
+        },
+        "externalContributor" : false,
+        "username" : "glen.nicol"
+      },
+      "name" : {
+        "familyName" : "Nicol",
+        "formatted" : "Glen Nicol",
+        "givenName" : "Glen"
+      },
+      "type" : "person"
+    },
+    "content" : {
+      "text" : "<body><!-- [DocumentBodyStart:5a1190ad-3ef0-4ba2-94f9-e84962ef50b4] --><div class=\"jive-rendered-content\"><p>Jive World LTJ</p></div><!-- [DocumentBodyEnd:5a1190ad-3ef0-4ba2-94f9-e84962ef50b4] --></body>",
+      "editable" : false,
+      "type" : "text/html"
+    },
+    "parent" : "https://sandbox.jiveon.com/api/core/v3/places/92222",
+    "replyCount" : 0,
+    "status" : "published",
+    "subject" : "LTJ Test Discussion",
+    "viewCount" : 18,
+    "visibleToExternalContributors" : false,
+    "parentVisible" : true,
+    "parentContentVisible" : true,
+    "categories" : [ ],
+    "visibility" : "place",
+    "outcomeTypes" : [ {
+      "id" : "6",
+      "name" : "success",
+      "communityAudience" : "true",
+      "shareable" : false,
+      "noteRequired" : true,
+      "urlAllowed" : false,
+      "generalNote" : true,
+      "confirmExclusion" : false,
+      "confirmUnmark" : false
+    }, {
+      "id" : "8",
+      "name" : "official",
+      "shareable" : false,
+      "noteRequired" : false,
+      "urlAllowed" : false,
+      "generalNote" : false,
+      "confirmExclusion" : true,
+      "confirmUnmark" : false
+    }, {
+      "id" : "3",
+      "name" : "pending",
+      "shareable" : true,
+      "noteRequired" : true,
+      "urlAllowed" : false,
+      "generalNote" : false,
+      "confirmExclusion" : false,
+      "confirmUnmark" : false
+    }, {
+      "id" : "7",
+      "name" : "outdated",
+      "shareable" : false,
+      "noteRequired" : false,
+      "urlAllowed" : true,
+      "generalNote" : false,
+      "confirmExclusion" : false,
+      "confirmUnmark" : false
+    }, {
+      "id" : "2",
+      "name" : "finalized",
+      "shareable" : false,
+      "noteRequired" : false,
+      "urlAllowed" : false,
+      "generalNote" : false,
+      "confirmExclusion" : true,
+      "confirmUnmark" : true
+    } ],
+    "attachments" : [ ],
+    "question" : true,
+    "resolved" : "open",
+    "restrictReplies" : false,
+    "sameQuestionCount" : 0,
+    "type" : "discussion"
+  }
